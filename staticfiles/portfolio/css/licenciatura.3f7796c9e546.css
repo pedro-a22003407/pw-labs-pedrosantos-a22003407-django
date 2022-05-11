@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.container {
+  background-color: rgb(238, 248, 248);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 25px 100px;
+}
+
+.container div {
+  float: left;
+  width: 250px;   height: 150px;
+  padding: 25px;  margin: 10px;
+  background-color: white;
+  border-radius: 10px;                 /* arredonda os cantos */
+  box-shadow: 5px 5px 15px grey;
+}
+
+.after-box {
+  clear: left;
+  background-color: skyblue;
+}
