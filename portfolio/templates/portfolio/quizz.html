@@ -1,0 +1,79 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+
+
+	<h3>Quizz</h3>
+    <form method="post">
+        {% csrf_token %}
+        <label>
+            Insira o seu nome:
+            <input type="text" name="nome" maxlength="100" placeholder=" Insira o seu nome" class="form-altera">
+        </label>
+        <label>
+            Qua é o elemento do CSS Box Model?
+            <label for="treta1">
+                java
+                <input type="radio" value="conteudo" name="pergunta1" id="treta1">
+            </label>
+            <label for="treta2">
+                Css4
+                <input type="radio" value="borda" name="pergunta1" id="treta2">
+            </label>
+            <label for="treta3">
+                margem
+                <input type="radio" value="margem" name="pergunta1" id="treta3">
+            </label>
+            <label for="treta4">
+                python
+                <input type="radio" value="python" name="pergunta1" id="treta4">
+            </label>
+        </label>
+        <label>
+            Qual o Css mais recente?
+            <label for="tretaa1">
+                Css1
+                <input type="radio" value="Css1" name="pergunta2" id="tretaa1">
+            </label>
+            <label for="tretaa2">
+                Css2
+                <input type="radio" value="Css2" name="pergunta2" id="tretaa2">
+            </label>
+            <label for="tretaa3">
+                Css3
+                <input type="radio" value="Css3" name="pergunta2" id="tretaa3">
+            </label>
+            <label for="tretaa4">
+                Css4
+                <input type="radio" value="Css4" name="pergunta2" id="tretaa4">
+            </label>
+        </label>
+        <label>
+            Que linguagem é que se usa no início de um Web Site?
+            <label for="tretaaa1">
+                Python
+                <input type="radio" value="conteudo" name="pergunta3" id="tretaaa1">
+            </label>
+            <label for="tretaaa2">
+                Java
+                <input type="radio" value="borda" name="pergunta3" id="tretaaa2">
+            </label>
+            <label for="tretaaa3">
+                Html
+                <input type="radio" value="margem" name="pergunta3" id="tretaaa3">
+            </label>
+            <label for="tretaaa4">
+                Css
+                <input type="radio" value="python" name="pergunta3" id="tretaaa4">
+            </label>
+        </label>
+        <label>
+            Diga o que achou do questionário e que nota acha que vai ter
+            <input type="text" name="pergunta1" placeholder="Responda aqui" class="form-altera">
+        </label>
+        <input type="submit" value="Gravar" class="botao botao-sucesso" >
+    </form>
+
+    {% load static%}
+    <img src="{% static 'portfolio/images/grafico.png' %}" />
+{% endblock %}

@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+header {
+  height: 10vh;
+  background-image: linear-gradient(to right, #000256, #007bd2);
+  color: white;
+  top: 0;
+  /* alinhando logo e menu */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  font-size: 2em;
+  padding: 1em;
+}
+
+header nav {
+  display:flex;
+  justify-contents: flex-end;
+}
+
+nav a {
+  padding: 0 1em;
+  text-decoration: none;
+  font-size: 18px;
+  color: lightgray;
+  font-weight: bold;
+}
+
+main {
+  padding: 4em 4em;
+}
+
+body {
+    background-color: #ddd;
+}
+
+footer {
+  height:5vh;
+  display:flex;
+  justify-content: flex-end;
+  padding: 0 2vw;
+  align-items: center;
+  background-image: linear-gradient(to right, #000256, #007bd2);
+}
+
+.lista{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+    padding: 20px 10px;
+}
+
+.lista div {
+    margin: 10px;
+    width: 300px;
+    padding: 10px 20px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+form {
+    display: block;
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    background-color: #9c9dff;
+    padding: 15px;
+    border-radius: 2px;
+}
+
+form label > label {
+    display: block;
+    margin-top: 5px;
+}
+
+form > p, form > label {
+    display: block;
+    margin-top: 15px;
+}
+
+.form-altera {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.botao {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 12px;
+    background-color: #70e100;
+    color: #FFFFFF;
+}
+
+.botao-sucesso {
+    margin-top: 10px;
+    background-color: #70e100;
+    color: #FFFFFF;
+}
+
+.botao-sucesso:hover {
+    cursor: pointer;
+    background-color: darkgreen;
+}

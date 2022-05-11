@@ -1,0 +1,55 @@
+{% extends 'portfolio/layout.html' %}
+
+<!DOCTYPE html>
+<html lang="pt">
+
+{% block main %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Pedro Santos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/heroPage.css' %}">
+
+    <title>HERO PAGE</title>
+</head>
+
+<body>
+    <div>
+
+        <header class="Cabecalho">
+            <div>
+                <video class="CabecalhoVideo" autoplay loop muted>
+                    {% load static %}
+                        <source src="{% static 'portfolio/images/Cabecalhovideo.mp4' %}" type="video/mp4" />
+                </video>
+
+                <div class="TextoMenu">
+                    <h1>No meio da dificuldade encontra-se a oportunidade.</h1>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div class="capitais">
+        <article>
+            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+        </article>
+    </div>
+
+
+    <div class="parallax2">
+        <h1 style="color: rgb(243,243,243);">Mais está para vir...</h1>
+    </div>
+
+
+</body>
+</html>
+{% endblock %}
