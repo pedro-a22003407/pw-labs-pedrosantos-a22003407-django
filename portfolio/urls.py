@@ -19,14 +19,15 @@ from . import views
 app_name = "portfolio"
 
 urlpatterns = [
-    path('', views.layout_view, name='layout'),
+    path('', views.heroPage_view, name='heroPage'),
     path('layout', views.layout_view),
     path('home', views.home_view, name='home'),
-    path('about', views.layout_view, name='about'),
+    path('contact', views.contact_view, name='contact'),
     path('projetos', views.projetos_view, name='projetos'),
-    path('contact', views.layout_view, name='contact'),
     path('licenciatura', views.licenciatura_view, name='licenciatura'),
     path('heroPage', views.heroPage_view, name='heroPage'),
     path('blog', views.blog_view, name='blog'),
     path('quizz', views.quizz_view, name='quizz'),
+    path('login', views.login_view, name='login'),
+    path('logout', views.logout_view, name='logout'),
 ]

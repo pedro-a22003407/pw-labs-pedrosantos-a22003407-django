@@ -5,22 +5,27 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/projetos.css' %}">
 
 
-	<h3>Projetos</h3>
-     <div class="container">
-  <div>
-    <h2>Programção Web</h2>
-    <p>Aprender sobre HTML, CSS, PYTHON.</p>
-  </div>
 
-  <div>
-    <h2>Base de Dados</h2>
-    <p>Aprender como criar base de dados e gerir dados.</p>
-  </div>
+    <div class="container">
+    <h3>Projetos</h3>
+        {% for projeto in projetos %}
+            <div>
+                <h2>{{ projeto.nome }}</h2>
+                <p>{{ projeto.descricao }}</p>
+            </div>
+        {% endfor %}
 
-  <div>
-    <h2>AED</h2>
-    <p>Aprender como programar em java e algoritmos.</p>
-  </div>
+        {% if request.user.is_authenticated %}
+            <form action="" method="POST">
+                <p>Crie Projetos</p>
+                {% csrf_token %}
+                {{ form.as_p }}
 
-</div>
+                <input type="submit" value="Gravar" class="botao botao-sucesso">
+            </form>
+        {% else %}
+            <h2 class="container">Faça login para ativar todas as funcionalidades</h2>
+        {% endif %}
+    </div>
+
 {% endblock %}

@@ -6,6 +6,7 @@
     <title>Portfolio 🧾</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+    <script src="https://kit.fontawesome.com/5fc2c88780.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -16,19 +17,32 @@
         </div>
         <nav>
             <a href="{%  url 'portfolio:heroPage' %}">Home</a>
-            <a href="{%  url 'portfolio:about' %}">About</a>
             <a href="{%  url 'portfolio:projetos' %}">Projetos</a>
             <a href="{%  url 'portfolio:licenciatura' %}">Licenciatura</a>
             <a href="{%  url 'portfolio:blog' %}">Blog</a>
             <a href="{%  url 'portfolio:quizz' %}">Quizz</a>
             <a href="{%  url 'portfolio:contact' %}">Contact</a>
+            {% if request.user.is_authenticated %}
+            <a href="{%  url 'portfolio:logout' %}">Logout</a>
+            {% else %}
+            <a href="{%  url 'portfolio:login' %}">Login</a>
+            {% endif %}
         </nav>
     </header>
         <main>
             {% block main %}
             {% endblock main %}
         </main>
-    <footer>ULHT 2022</footer>
+    <footer>
+        <p>Follow me</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=100002921166582" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sant0s___/"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pedro-santos-86b577208/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <p class="end">Pedro Santos, ULHT 2022</p>
+    </footer>
+
 
 </body>
 </html>

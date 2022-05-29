@@ -1,0 +1,28 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/contact.css' %}">
+
+    <section class="about">
+        <div class="main2">
+            {% load static%}
+            <img src="{% static 'portfolio/images/Photo_Spotify-removebg-preview.png' %}" />
+            <div class="about-text">
+                <h2>Contact Me</h2>
+                <h5>Developer & Designer</h5>
+                <p>Tel: +351 926 430 563<br>Email: santospedro.2002@gmail.com</p>
+                <button type="button" href="mailto: santospedro.2002@gmail.com">
+                    Send me an Email
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!---Contact me--->
+            <div class="contact-me">
+                <p>Let me get you a beautiful website</p>
+                <a class="button-two" href="mailto: santospedro.2002@gmail.com">Hire Me</a>
+            </div>
+{% endblock %}
