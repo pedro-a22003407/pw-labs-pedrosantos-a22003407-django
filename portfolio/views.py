@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 import datetime
 
 from portfolio.forms import PostForm, CadeiraForm, ProjetoForm
-from portfolio.models import Post, PontuacaoQuizz, Cadeira, Projeto
+from portfolio.models import Post, PontuacaoQuizz, Cadeira, Projeto, TFC
 
 
 def layout_view(request):
@@ -82,6 +82,22 @@ def heroPage_view(request):
 
 def contact_view(request):
     return render(request, 'portfolio/contact.html')
+
+
+def tempo_view(request):
+    return render(request, 'portfolio/tempo.html')
+
+
+def TFC_view(request):
+    TFCS = TFC.objects.all()
+    context = {'TFCS': TFCS}
+    return render(request, 'portfolio/TFC.html', context)
+
+
+def TFC2_view(request, TFC_ID):
+    TFC2 = TFC.objects.get(pk=TFC_ID)
+    context = {'TFC': TFC2}
+    return render(request, 'portfolio/TFC2.html', context)
 
 
 def quizz_view(request):

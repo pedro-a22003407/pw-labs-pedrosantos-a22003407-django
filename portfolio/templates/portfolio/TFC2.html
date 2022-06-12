@@ -1,0 +1,10 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/TFC.css' %}">
+    <br>
+    <h1 STYLE="text-align: center">TFC 2</h1>
+    <h1>{{ TFC.titulo }}</h1>
+    <p>{{ TFC.resumo }}</p>
+{% endblock %}

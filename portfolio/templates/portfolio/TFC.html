@@ -1,0 +1,63 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/TFC.css' %}">
+    <br>
+    <h1 STYLE="text-align: center">TFC</h1>
+    <main class="gallery gallery__content--flow">
+        <a href="{% url 'portfolio:TFC2' TFCS.0.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc1.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">INSTRMUSIC</h1>
+                <h2 class="title title--secondary">Guilherme Franco & Marina Martins</h2>
+            </figcaption>
+        </figure></a>
+
+        <a href="{% url 'portfolio:TFC2' TFCS.1.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc2.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">Home Surveilance</h1>
+                <h2 class="title title--secondary">Pedro Nogueira & Ricardo Cunha</h2>
+            </figcaption>
+        </figure></a>
+
+        <a href="{% url 'portfolio:TFC2' TFCS.2.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc3.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">Traveller's Community</h1>
+                <h2 class="title title--secondary">TIAGO GUERRA & VERA TAVARES</h2>
+            </figcaption>
+        </figure></a>
+
+        <a href="{% url 'portfolio:TFC2' TFCS.3.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc4.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">Plataforma Colaborativa</h1>
+                <h2 class="title title--secondary">André Gomes & Gonçalo Coutinho</h2>
+            </figcaption>
+        </figure></a>
+
+        <a href="{% url 'portfolio:TFC2' TFCS.4.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc5.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">Monitorização Controlo de Drone</h1>
+                <h2 class="title title--secondary">Rúben Cardoso</h2>
+            </figcaption>
+        </figure></a>
+
+        <a href="{% url 'portfolio:TFC2' TFCS.5.id %}">
+        <figure>
+            <img src="{% static 'portfolio/images/tfc6.png' %}" />
+            <figcaption class="header__caption" role="presentation">
+                <h1 class="title title--primary">Mobile app</h1>
+                <h2 class="title title--secondary">Catarina Moita</h2>
+            </figcaption>
+        </figure></a>
+    </main>
+{% endblock %}

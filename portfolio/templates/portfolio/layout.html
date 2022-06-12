@@ -7,41 +7,82 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
     <script src="https://kit.fontawesome.com/5fc2c88780.js" crossorigin="anonymous"></script>
+    <script>function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('relogio').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
 
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }
+        // add zero in front of numbers < 10
+        return i;
+    }</script>
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        fetch('https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[0].text);
+                document.querySelector(".tempo").innerHTML = data[0].text;
+            });
+    });</script>
+    <script>
+        const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '46ac52093emsh800394ab09590a1p13fa39jsn7b3ba87fa485',
+		'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+	}
+};
+
+fetch('https://numbersapi.p.rapidapi.com/1729/math?json=true&fragment=true', options)
+	.then(response => response.json())
+	.then(response => document.querySelector(".facto").innerHTML = response.text)
+	.catch(err => console.error(err));</script>
 </head>
 
-<body>
-    <header>
-        <div>
-            <h3>Pedro Santos</h3>
-        </div>
-        <nav>
-            <a href="{%  url 'portfolio:heroPage' %}">Home</a>
-            <a href="{%  url 'portfolio:projetos' %}">Projetos</a>
-            <a href="{%  url 'portfolio:licenciatura' %}">Licenciatura</a>
-            <a href="{%  url 'portfolio:blog' %}">Blog</a>
-            <a href="{%  url 'portfolio:quizz' %}">Quizz</a>
-            <a href="{%  url 'portfolio:contact' %}">Contact</a>
-            {% if request.user.is_authenticated %}
-            <a href="{%  url 'portfolio:logout' %}">Logout</a>
-            {% else %}
-            <a href="{%  url 'portfolio:login' %}">Login</a>
-            {% endif %}
-        </nav>
-    </header>
-        <main>
-            {% block main %}
-            {% endblock main %}
-        </main>
-    <footer>
-        <p>Follow me</p>
-        <div class="social">
-            <a href="https://www.facebook.com/profile.php?id=100002921166582" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/sant0s___/"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/pedro-santos-86b577208/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-        <p class="end">Pedro Santos, ULHT 2022</p>
-    </footer>
+<body onload="startTime()">
+<header>
+    <div>
+        <h3>Pedro Santos</h3>
+    </div>
+    <div id="relogio"></div>
+    <nav>
+        <a href="{% url 'portfolio:heroPage' %}">Home</a>
+        <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+        <a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a>
+        <a href="{% url 'portfolio:blog' %}">Blog</a>
+        <a href="{% url 'portfolio:quizz' %}">Quizz</a>
+        <a href="{% url 'portfolio:contact' %}">Contact</a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'portfolio:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'portfolio:login' %}">Login</a>
+        {% endif %}
+    </nav>
+</header>
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+<footer>
+    <p>Follow me</p>
+    <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100002921166582" target="_blank"><i
+                class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sant0s___/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/pedro-santos-86b577208/" target="_blank"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <p class="end">Pedro Santos, ULHT 2022</p>
+</footer>
 
 
 </body>

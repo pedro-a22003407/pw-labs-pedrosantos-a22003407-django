@@ -17,12 +17,14 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/heroPage.css' %}">
 
     <title>HERO PAGE</title>
+
 </head>
 
-<body>
+<body onload="startTime()">
     <div>
 
         <header class="Cabecalho">
+
             <div>
                 <video class="CabecalhoVideo" autoplay loop muted>
                     {% load static %}
@@ -57,7 +59,15 @@
 
 
     <div class="parallax2">
-        <h1 style="color: rgb(243,243,243);">Mais está para vir...</h1>
+        <h1 class="d3">Veja o tempo Hoje!</h1>
+        <button class="button"><a href="tempo" style="color: white">Clique aqui</a></button>
+
+        <br>
+        <br>
+        <div style="background-color: #1b1b1b">
+        <h2 style="color: #62ffe5">Veja aqui um novo facto sobre números, todos os dias:</h2>
+        <p class="facto" style="color: #81d4fa"></p>
+        </div>
     </div>
 
 
